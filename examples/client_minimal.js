@@ -10,7 +10,7 @@ process.stdin.setEncoding('utf8');
 /**
  * Load the required Node.js addons.
  */
-var ts3client = require('../api.js');
+var ts3client = require('../api.js').default;
 
 // ============================================================
 // ======================== CALLBACKS =========================
