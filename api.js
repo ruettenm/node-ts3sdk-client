@@ -49,9 +49,9 @@ let getPlatform = () => {
 };
 let ts3client = require(`./bin/${getPlatform()}/ts3client.node`);
 exports.ts3client = ts3client;
-ts3client.getPlatform = getPlatform();
-ts3client.getResourcePath = getResourcePath();
-ts3client.getBindingsPath = getBindingsPath();
+ts3client.getPlatform = getPlatform;
+ts3client.getResourcePath = getResourcePath;
+ts3client.getBindingsPath = getBindingsPath;
 ts3client.LogTypes = {
     NONE: 0x00,
     FILE: 0x01,

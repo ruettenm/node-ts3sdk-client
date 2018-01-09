@@ -62,9 +62,9 @@ let getPlatform = (): string => {
 
 let ts3client: any = require(`./bin/${getPlatform()}/ts3client.node`);
 
-ts3client.getPlatform = getPlatform();
-ts3client.getResourcePath = getResourcePath();
-ts3client.getBindingsPath = getBindingsPath();
+ts3client.getPlatform = getPlatform;
+ts3client.getResourcePath = getResourcePath;
+ts3client.getBindingsPath = getBindingsPath;
 
 ts3client.LogTypes = {
     NONE:          0x00,
