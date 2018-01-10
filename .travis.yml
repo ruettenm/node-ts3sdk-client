@@ -13,9 +13,6 @@ node_js:
   - "7"
   - "8"
 before_install:
-  - apt-get update -qq
-  - apt-get install npm nodejs-legacy
-  - npm config set registry http://registry.npmjs.org/
   - npm install -g node-gyp
   - wget http://dl.4players.de/ts/releases/3.0.4/ts3_sdk_3.0.4.zip
   - unzip ts3_sdk_3.0.4.zip
