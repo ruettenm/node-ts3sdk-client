@@ -1,10 +1,25 @@
 language: C++
-sudo: required
 dist: trusty
+sudo: required
+addons:
+  apt:
+    packages:
+      - zip
+      - make
+node_js:
+  - "4"
+  - "5"
+  - "6"
+  - "7"
+  - "8"
 before_install:
-  - sudo apt-get update -qq
-  - sudo apt-get install npm nodejs-legacy
-  - sudo npm config set registry http://registry.npmjs.org/
-  - sudo npm install -g node-gyp
+  - npm install -g node-gyp
+  - wget http://dl.4players.de/ts/releases/3.0.4/ts3_sdk_3.0.4.zip
+  - unzip ts3_sdk_3.0.4.zip
+  - cd ts3_sdk_3.0.4/examples/server/
+  - make -f ./Makefile.linux_amd64
+  - nohup ./ts3_server_sample &
+  - cd ../../../
 script:
   - npm install
+  - npm run test
